@@ -4,24 +4,35 @@
 //The prime factors of 13195 are 5, 7, 13 and 29.
 //What is the largest prime factor of the number 600851475143 ?
 
-void Primality(int input)
+bool isNotPrime(long input)
 {
-	bool primality = true;
-	for (int i = 2; i <= input / 2; i++)
+	bool notPrime = false;
+	for (int i = 2; i <= input / 2; ++i)
 	{
 		if (input % i == 0)
 		{
-			primality = false;
+			notPrime = true;
 			break;
 		}
 	}
-	if (primality) std::cout << "This number is already prime." << std::endl;
-	else std::cout << "sallgood get started boi" << std::endl;
+	if (notPrime == false) std::cout << "This number is already prime." << std::endl;
+	return(notPrime);
 }
 
-void three(int num)
+void three(long input)
 {
-	Primality(num);
-
+	if (isNotPrime(input) == true)
+	{
+		int largestPrime = 0;
+		for (int i = 2; i <= input / 2; ++i)
+		{
+			if (input % i == 0)
+			{
+				largestPrime = i;
+			}
+		};
+		std::cout << "The largest prime factor of " << input
+			<< " is: " << largestPrime << std::endl;
+	}
 
 }

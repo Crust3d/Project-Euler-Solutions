@@ -29,5 +29,5 @@ void two(int max)
 	} while (z < max);
 
 	std::cout << "The sum of of all even Fibonacci sequence numbers less than "
-		<< max << " is:\n" << total << std::endl;
+		<< max << " is: " << total << std::endl;
 }
