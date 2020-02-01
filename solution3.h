@@ -10,6 +10,7 @@ void three(long long input)
 	long long number = input;
 	long biggestFactorial = 0;
 	int counter = 2;
+	bool isPrime = true;
 
 	while (counter * counter <= number)
 	{
@@ -17,6 +18,7 @@ void three(long long input)
 		{
 			number = number / counter;
 			biggestFactorial = counter;
+			isPrime = false;
 		}
 		else
 		{
@@ -28,6 +30,7 @@ void three(long long input)
 		biggestFactorial = number;
 	}
 
-	std::cout << "The largest prime factor of " << input
+	if (isPrime == false) std::cout << "The largest prime factor of " << input
 		<< " is: " << biggestFactorial << std::endl;
+	if (isPrime == true) std::cout << "This number is already prime." << std::endl;
 }
